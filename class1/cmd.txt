@@ -1,0 +1,37 @@
+-- Set current namespace
+kubectl config set-context --current --namespace=<namespace>
+
+-- Get operations
+
+- kubectl get <object> <object-name> -n <namespace>
+
+examples:
+
+kubectl get pods nginx -n k8s-training
+
+-- Get in yaml format
+
+kubectl get pods nginx -n k8s-training -o yaml
+
+-- describe
+
+kubectl describe <object> <object-name> -n <namespace>
+
+-- Create operations
+
+kubectl create <object> <object-name> -n <namespace>
+
+-- Delete operations
+
+kubectl delete <object> <object-name> -n <namespace>
+
+-- Edit operations
+
+kubectl edit <object> <object-name> -n <namespace>
+
+-- Apply manifest
+
+kubectl apply -f <file-name>
+
+-- export SVC using minikube
+minikube service <svc-name> -n <namespace> --url
