@@ -1,4 +1,10 @@
+-- change cluster context
+
+https://github.com/ahmetb/kubectx/blob/master/kubens
+kubectx <cluster-name>
+
 -- Set current namespace
+kubens <namespace>
 kubectl config set-context --current --namespace=<namespace>
 
 -- Get operations
