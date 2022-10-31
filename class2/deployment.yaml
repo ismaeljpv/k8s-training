@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-dp
   labels:
-    app: nginx
+    app: nginx-dp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-dp
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-dp
     spec:
       containers:
-      - name: nginx
+      - name: nginx-dp
         image: nginx:1.7.9
         ports:
         - containerPort: 80
-      resources:
-      requests:
-        cpu: 10m
-        memory: 5Mi
-      limits:
-        cpu: 50m
-        memory: 30Mi
+        resources:
+          requests:
+            cpu: 10m
+            memory: 5Mi
+          limits:
+            cpu: 50m
+            memory: 30Mi

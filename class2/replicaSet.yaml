@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: frontend
+  name: nginx-rs
   labels:
-    app: guestbook
-    tier: frontend
+    app: nginx-rs
+    tier: nginx-rs
 spec:
   # modifica las réplicas según tu caso de uso
   replicas: 3
   selector:
     matchLabels:
-      tier: frontend
+      tier: nginx-rs
   template:
     metadata:
       labels:
-        tier: frontend
+        tier: nginx-rs
     spec:
       containers:
-      - name: php-redis
-        image: gcr.io/google_samples/gb-frontend:v3
+      - name: nginx-rs
+        image: nginx:1.7.9
